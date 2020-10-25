@@ -302,11 +302,16 @@ def main():
                 if request.form.get("logout_button") == "logout_btn":
                     session.pop("user", None)
                     return render_template("login.html", error_message="You have logged out")
-                if request.form.get("submit_button") == "submit_btn":
+                elif request.form.get("submit_button") == "submit_btn":
                     title = request.form.get("title")
                     rating = request.form.get("rating")
                     review = request.form.get("review")
                     user_review = Review(title, rating, review)
+                    return
+                else:
+                    return render_template("reviews.html")
+            else:
+                return render_template("reviews.html")
         else:
             return render_template("login.html")
 
