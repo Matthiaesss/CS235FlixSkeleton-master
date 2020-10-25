@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block banner %}
+<style>
+    .header {
+        padding: 10px;
+        background: #424949;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+    }
+    .form {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+
+<div class="header">
+    <br />
+    <br />
+    <h1>Register</h1>
+    <p>Register an account</p>
+    <br />
+</div>
+{% endblock %}
+{% block main %}
+<br />
+<style>
+    .form {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .button {
+        margin: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+<form action="#" method="post">
+  <div class="form-group">
+    <label for="exampleInputUser">Username</label>
+    <input type="text" class="form-control" id="username" name="user" placeholder="User">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+  </div>
+  <div class = button>
+    <button type="submit" class="btn btn-primary" name="submit_button" value="submit_btn">Submit</button>
+  </div>
+</form>
+{% endblock %}
+{% block navigation %}
+<style>
+    .header2 {
+        text-align: center;
+    }
+</style>
+<br />
+<br />
+<br />
+<div class="header2">
+    <h2>{{error_message}}</h2>
+</div>
+{% endblock %}

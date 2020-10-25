@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Movies Page{% endblock %}
+{% block banner %}
+<style>
+    .header {
+        padding: 10px;
+        background: #424949;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+    }
+    .form {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+
+<div class="header">
+    <br />
+    <br />
+    <h1>Movies</h1>
+    <p>Movies by title</p>
+    <br />
+    <div class="form">
+        <form class="form-inline" action="#" method="post">
+            <input class="form-control mr-sm-2" type="search" name="movie_title" placeholder="Title" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="movie_search" name="title_search">Search by title</button>
+        </form>
+    </div>
+</div>
+<br />
+{% endblock %}
+
+{% block main %}
+<style>
+    .header_main {
+        text-align: center;
+    }
+    .paragraph {
+        text-align: center;
+    }
+</style>
+<div class = header_main>
+    <br />
+    <h3>{{title}}</h3>
+    <br />
+    <div class = paragraph>
+        <p>{{director}}</p>
+        <p>{{genre}}</p>
+        <p>{{actors}}</p>
+        <p>{{desc}}</p>
+    </div>
+</div>
+{% endblock %}
+{% block navigation %}
+<style>
+    .btngroup {
+        margin: 0;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+<div class="form">
+        <form class="form-inline" action="#" method="post">
+            <div class="btngroup" aria-label="Basic example">
+                <button type="submit" class="btn btn-secondary" name="previous_btn" value="minus">Previous</button>
+                <button type="submit" class="btn btn-secondary" name="next_btn" value="plus">Next</button>
+            </div>
+        </form>
+</div>
+{% endblock %}
